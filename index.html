@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на Свадебную Роспись</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            scroll-snap-align: start;
+        }
+
+        /* === Слайд 1 === */
+        .slide1 {
+            background-image: url('image1.jpg'); /* Путь к изображению */
+            background-size: cover; /* Растягивает изображение, чтобы покрыть всю область */
+            background-position: center; /* Центрирует изображение */
+            background-repeat: no-repeat; /* Запрещает повторение изображения */
+            background-color: rgba(255, 255, 255, 0.7); /* Добавляем полупрозрачный белый фон для текста */
+            background-blend-mode: overlay; /* Комбинирует изображение и цвет */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            color: #fff; /* Меняем цвет текста на белый, чтобы был виден на фоне */
+        }
+
+        /* === Слайд 2 === */
+        .slide2 {
+            background-image: url('image2.jpg'); /* Путь к изображению */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.7); /* Добавляем полупрозрачный белый фон для текста */
+            background-blend-mode: overlay; /* Комбинирует изображение и цвет */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* === Слайд 3 === */
+        .slide3 {
+            background-image: url('image3.jpg'); /* Путь к изображению */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.7); /* Добавляем полупрозрачный белый фон для текста */
+            background-blend-mode: overlay; /* Комбинирует изображение и цвет */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.2s;
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.4s;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #1a2434;
+        }
+
+        .line {
+            width: 80px;
+            height: 2px;
+            background-color: #2c3e50;
+            margin: 20px auto;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1.1em;
+            }
+        }
+
+        /* Стили для прокрутки */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            scroll-snap-type: y mandatory;
+        }
+
+        .slide1, .slide2, .slide3 {
+            height: 100vh;
+            scroll-snap-align: start;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container slide1">
+        <h1>Приглашаем на Свадебную Роспись</h1>
+        <div class="line"></div>
+        <h2>Егор и Анастасия</h2>
+    </div>
+
+    <div class="container slide2">
+        <h2>Дата и Время</h2>
+        <div class="line"></div>
+        <p>16:00 03.03.2025</p>
+    </div>
+
+    <div class="container slide3">
+        <h2>Онлайн-Трансляция</h2>
+        <div class="line"></div>
+        <p>Присоединяйтесь к нашей росписи онлайн!</p>
+        <p><a href="[Пожалуйста, введите ссылку на онлайн-трансляцию]" target="_blank">Смотреть трансляцию</a></p>
+    </div>
+
+</body>
+</html>
