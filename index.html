@@ -26,56 +26,61 @@
             justify-content: center;
             text-align: center;
             scroll-snap-align: start;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .container.active {
+            opacity: 1;
         }
 
         /* === Слайд 1 === */
         .slide1 {
-            background-image: url('image1.jpg'); /* Путь к изображению */
-            background-size: cover; /* Растягивает изображение, чтобы покрыть всю область */
-            background-position: center; /* Центрирует изображение */
-            background-repeat: no-repeat; /* Запрещает повторение изображения */
-            background-color: rgba(255, 255, 255, 0.7); /* Добавляем полупрозрачный белый фон для текста */
-            background-blend-mode: overlay; /* Комбинирует изображение и цвет */
-            padding: 20px;
+            background-image: url('image1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.7);
+            background-blend-mode: overlay;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            color: #fff; /* Меняем цвет текста на белый, чтобы был виден на фоне */
+            color: #d0d0d0;
         }
 
         /* === Слайд 2 === */
         .slide2 {
-            background-image: url('image2.jpg'); /* Путь к изображению */
+            background-image: url('image2.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: rgba(255, 255, 255, 0.7); /* Добавляем полупрозрачный белый фон для текста */
-            background-blend-mode: overlay; /* Комбинирует изображение и цвет */
-            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            background-blend-mode: overlay;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
         /* === Слайд 3 === */
         .slide3 {
-            background-image: url('image3.jpg'); /* Путь к изображению */
+            background-image: url('image3.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: rgba(255, 255, 255, 0.7); /* Добавляем полупрозрачный белый фон для текста */
-            background-blend-mode: overlay; /* Комбинирует изображение и цвет */
-            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            background-blend-mode: overlay;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.5em;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
+            font-size: 2.2em;
             margin-bottom: 15px;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
@@ -85,7 +90,7 @@
 
         p {
             font-size: 1.2em;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
             animation-delay: 0.4s;
@@ -106,7 +111,7 @@
             width: 80px;
             height: 2px;
             background-color: #2c3e50;
-            margin: 20px auto;
+            margin: 15px auto;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
             animation-delay: 0.6s;
@@ -129,7 +134,7 @@
                 font-size: 2em;
             }
             h2 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
             p {
                 font-size: 1.1em;
@@ -149,6 +154,31 @@
             height: 100vh;
             scroll-snap-align: start;
         }
+
+        /* Стили для таймера */
+        #countdown {
+            font-size: 1.6em;
+            margin-top: 15px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.8s;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        /* Увеличиваем размер текста для даты и времени */
+        .slide2 p {
+            font-size: 1.4em;
+        }
+
+        /* Стили для текста приглашения на первом слайде */
+        .slide1 p {
+            font-size: 1.3em;
+            font-weight: bold;
+            width: 80%; /* Ограничиваем ширину текста */
+            margin: 0 auto; /* Центрируем текст */
+            word-wrap: break-word; /* Переносим длинные слова */
+        }
     </style>
 </head>
 <body>
@@ -157,20 +187,66 @@
         <h1>Приглашаем на Свадебную Роспись</h1>
         <div class="line"></div>
         <h2>Егор и Анастасия</h2>
+        <p>Мы рады пригласить вас на торжественную церемонию нашей свадебной росписи! Ваша любовь и поддержка значат для нас очень много, и мы хотим разделить этот особенный момент с вами. Этот день станет для нас началом новой главы, и мы будем счастливы видеть вас рядом.</p>
     </div>
 
     <div class="container slide2">
         <h2>Дата и Время</h2>
         <div class="line"></div>
-        <p>16:00 03.03.2025</p>
+        <p>03.03.2025 16:00</p>
+        <div id="countdown"></div>
     </div>
 
     <div class="container slide3">
         <h2>Онлайн-Трансляция</h2>
         <div class="line"></div>
         <p>Присоединяйтесь к нашей росписи онлайн!</p>
-        <p><a href="[Пожалуйста, введите ссылку на онлайн-трансляцию]" target="_blank">Смотреть трансляцию</a></p>
+        <p><a href="https://vkvideo.ru/@id1032340383" target="_blank">Смотреть трансляцию</a></p>
     </div>
+
+    <script>
+        // Установите дату и время росписи
+        const weddingDate = new Date("March 3, 2025 16:00:00");
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = weddingDate.getTime() - now.getTime();
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `Осталось: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+
+            if (timeLeft < 0) {
+                document.getElementById("countdown").innerHTML = "Роспись началась!";
+            }
+        }
+
+        setInterval(updateCountdown, 1000); // Обновлять каждую секунду
+
+        // Анимация при прокрутке
+        const slides = document.querySelectorAll('.container');
+
+        function checkSlide() {
+            slides.forEach(slide => {
+                const slideInAt = (window.scrollY + window.innerHeight) - slide.offsetHeight / 2;
+                const slideBottom = slide.offsetTop + slide.offsetHeight;
+                const isHalfShown = slideInAt > slide.offsetTop;
+                const isNotScrolledPast = window.scrollY < slideBottom;
+
+                if (isHalfShown && isNotScrolledPast) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkSlide);
+        checkSlide(); // Проверить слайды при загрузке страницы
+    </script>
 
 </body>
 </html>
